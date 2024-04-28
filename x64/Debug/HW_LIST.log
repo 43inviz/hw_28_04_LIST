@@ -1,0 +1,14 @@
+﻿  Source.cpp
+C:\Users\User\Desktop\projects_c++\HW_OOP\HW_LIST\Source.cpp(17,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\Desktop\projects_c++\HW_OOP\HW_LIST\List.h(179,10): warning C4553: '==': result of expression not used; did you intend '='?
+  (compiling source file 'Source.cpp')
+  C:\Users\User\Desktop\projects_c++\HW_OOP\HW_LIST\List.h(179,10):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\User\Desktop\projects_c++\HW_OOP\HW_LIST\Source.cpp(18,12):
+  	see reference to class template instantiation 'List<int>' being compiled
+  	C:\Users\User\Desktop\projects_c++\HW_OOP\HW_LIST\List.h(168,1):
+  	while compiling class template member function 'void List<int>::removeFromTail(void)'
+  		C:\Users\User\Desktop\projects_c++\HW_OOP\HW_LIST\Source.cpp(56,23):
+  		see the first reference to 'List<int>::removeFromTail' in 'main'
+  
+  HW_LIST.vcxproj -> C:\Users\User\Desktop\projects_c++\HW_OOP\x64\Debug\HW_LIST.exe
