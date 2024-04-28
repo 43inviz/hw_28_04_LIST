@@ -168,7 +168,7 @@ inline void List<T>::removeFromTail()
 {
 	if (_head != nullptr) {
 		Node<T>* delNode = _head;
-		Node <T>* predNode = nullptr;//pered ydalayemim elementom ostaetsya
+		Node <T>* predNode = nullptr;
 		while (delNode->getPtrNext() != nullptr) {
 			predNode = delNode;
 			delNode = delNode->getPtrNext();
