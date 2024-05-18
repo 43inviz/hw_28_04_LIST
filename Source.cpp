@@ -35,7 +35,7 @@ int main() {
 
 	int searchForChangeEl;
 	int changeEl;
-
+	
 	do {
 		menu();
 		cin >> choice;
@@ -80,16 +80,14 @@ int main() {
 
 			break;
 		case 9:
+			
 			cout << "Enter element: ";
 			cin >> searchEl;
 			searchPos = list.getPositionElement(searchEl);
 			if (searchPos != -1) {
-				cout << "Element [" << searchEl << "] placed on: " << searchPos+1 << " position\n";
+				cout << "Element [" << searchEl << "] placed on: " << searchPos + 1 << " position\n";
 			}
-			else {
-				cout << "No matches\n";
-
-			}
+			
 			break;
 		case 10:
 			cout << "Enter searched element: ";
@@ -102,6 +100,8 @@ int main() {
 			break;
 		}
 	} while (choice != 0);
+	
+	
 	//list.show();
 
 	//int searchedEl;

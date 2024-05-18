@@ -99,55 +99,68 @@ inline void List<T>::addToHead(T data)
 template<typename T>
 inline void List<T>::addAt(T inputData, int index)
 {
-	if (index < 0 || index > _size) {
-		cout << "Wrong index\n";
-	}
-
-
-	if (index == 0) {
-		addToTail(inputData);
-	}
-	else {
-		Node<T>* newNode = new Node<T>(inputData);
-		Node<T>* currentNode = _head;
-		for (int i = 0; i < index-1; i++){
-			currentNode = currentNode->getPtrNext();
-			
+	try {
+		if (index < 0 || index > _size) {
+			//cout << "Wrong index\n";
+			throw exception("Wrong index\n");
 		}
-		newNode->setPtrNext(currentNode->getPtrNext());
-		currentNode->setPtrNext(newNode);
+
+
+		if (index == 0) {
+			addToTail(inputData);
+		}
+		else {
+			Node<T>* newNode = new Node<T>(inputData);
+			Node<T>* currentNode = _head;
+			for (int i = 0; i < index - 1; i++) {
+				currentNode = currentNode->getPtrNext();
+
+			}
+			newNode->setPtrNext(currentNode->getPtrNext());
+			currentNode->setPtrNext(newNode);
+		}
+		_size++;
 	}
-	_size++;
+	catch (exception& ex) {
+		cout << ex.what() << endl;
+	}
 }
 
 template<typename T>
 inline void List<T>::delAt(int index)
 {
-	if (index >= 0 && index < _size) {
-		if (_head == nullptr) {
-			cout << "Nothing to delete\n";
-		}
-
-		if (index == 0) {
-			removeFromHead();
-		}
-		else {
-			Node<T>* predNode = _head;
-
-			for (int i = 0; i < index - 1; i++) {
-				predNode = predNode->getPtrNext();
+	try {
+		if (index >= 0 && index < _size) {
+			if (_head == nullptr) {
+				/*cout << "Nothing to delete\n";*/
+				throw exception("Nothing to delete\n");
 			}
 
-			Node<T>* currentNode = predNode->getPtrNext();
-			predNode->setPtrNext(currentNode->getPtrNext());
-			delete currentNode;
-		
-		}
+			if (index == 0) {
+				removeFromHead();
+			}
+			else {
+				Node<T>* predNode = _head;
 
-		_size--;
+				for (int i = 0; i < index - 1; i++) {
+					predNode = predNode->getPtrNext();
+				}
+
+				Node<T>* currentNode = predNode->getPtrNext();
+				predNode->setPtrNext(currentNode->getPtrNext());
+				delete currentNode;
+
+			}
+
+			_size--;
+		}
+		else {
+			//cout << "You enter wrong index\n";
+			throw exception("You enter wrong index\n");
+		}
 	}
-	else {
-		cout << "You enter wrong index\n";
+	catch (exception& ex) {
+		cout << ex.what() << endl;
 	}
 	
 }

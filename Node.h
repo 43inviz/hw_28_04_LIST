@@ -21,8 +21,10 @@ public:
 	}
 	
 	void setPtrNext(Node* next) {
-
+		
 		_ptrNext = next;
+		
+		
 	}
 };
 
